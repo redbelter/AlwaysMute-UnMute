@@ -101,3 +101,9 @@ jobs:
       with:
         name: AlwaysUnMute
         path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\Debug\net8.0\
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: MuteAllOnce
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\Debug\net8.0\

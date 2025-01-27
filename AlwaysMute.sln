@@ -5,11 +5,11 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlwaysMute", "AlwaysMute.csproj", "{42BB1D83-5184-4CDF-9944-335D399C00BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlwaysUnmute", "..\AlwaysUnmute\AlwaysUnmute.csproj", "{393FB2FF-A3BD-4FEC-94C3-A69507A29827}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlwaysUnmute", "AlwaysUnmute\AlwaysUnmute.csproj", "{393FB2FF-A3BD-4FEC-94C3-A69507A29827}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundLib", "..\SoundLib\SoundLib.csproj", "{E4647751-93C3-401A-A445-F238EAB4BC87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundLib", "SoundLib\SoundLib.csproj", "{E4647751-93C3-401A-A445-F238EAB4BC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteAllOnce", "..\MuteAllOnce\MuteAllOnce.csproj", "{9E6FDC38-F142-4312-8A17-20CEA3A50485}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteAllOnce", "MuteAllOnce\MuteAllOnce.csproj", "{9E6FDC38-F142-4312-8A17-20CEA3A50485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

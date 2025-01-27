@@ -82,27 +82,27 @@ jobs:
         Configuration: ${{ matrix.configuration }}
 
        # Restore the application to populate the obj folder with RuntimeIdentifiers
-    - name: Restore the application
+    - name: Build the applications
       run: msbuild $env:Solution_Name /t:Build /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
   
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload build artifacts
+    - name: Upload AlwaysMute build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: AlwaysMute
         path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\Debug\net8.0\
     
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload build artifacts
+    - name: Upload AlwaysUnMute build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: AlwaysUnMute
         path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\Debug\net8.0\
     
-    - name: Upload build artifacts
+    - name: Upload MuteAllOnce build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: MuteAllOnce

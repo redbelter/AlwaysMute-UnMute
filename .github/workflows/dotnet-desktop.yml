@@ -93,17 +93,17 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: AlwaysMute
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\Debug\net8.0\
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\${{ matrix.configuration }}\net8.0\
     
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload AlwaysUnMute build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: AlwaysUnMute
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\Debug\net8.0\
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\${{ matrix.configuration }}\net8.0\
     
     - name: Upload MuteAllOnce build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: MuteAllOnce
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\Debug\net8.0\
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\

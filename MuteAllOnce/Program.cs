@@ -2,4 +2,4 @@
 
 using SoundLib;
 
-MuteLoop.MuteAlways();
+MuteLoop.MuteOnce();

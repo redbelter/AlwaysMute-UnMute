@@ -11,6 +11,18 @@ namespace SoundLib
 
     public class MuteLoop
     {
+
+        public static void MuteOnce()
+        {
+            SetVolume(0);
+            Thread.Sleep(1000 * 60);
+        }
+
+        public static void UnMuteOnce()
+        {
+            SetVolume(100);
+        }
+
         public static void MuteAlways()
         {
             while (true)

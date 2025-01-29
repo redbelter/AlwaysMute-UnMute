@@ -123,7 +123,4 @@ jobs:
         title: "${{ matrix.configuration }} Build"
         files: |
           LICENSE.txt
-          D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\UnMuteAllOnce\bin\${{ matrix.configuration }}\net8.0\*.*
-          D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\*.*
-          D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\${{ matrix.configuration }}\net8.0\*.*
-          D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\${{ matrix.configuration }}\net8.0\*.*
+          MuteAllOnce-Debug.zip

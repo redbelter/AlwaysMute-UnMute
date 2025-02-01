@@ -48,7 +48,7 @@ on:
 
 jobs:
   create-release:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -68,6 +68,7 @@ jobs:
         version: ${{ steps.previoustag.outputs.tag }}
 
   build:
+    needs: create-release
     strategy:
       matrix:
         configuration: [Release]

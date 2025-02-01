@@ -47,9 +47,8 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   create-release:
-      runs-on: linux-latest
+    runs-on: linux-latest
 
     steps:
     - name: Checkout

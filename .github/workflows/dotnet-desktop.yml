@@ -69,14 +69,15 @@ jobs:
 
     - name: Determine and increment tag
       id: tag
+      shell: bash
       run: |
-          TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-          if [ -z "$TAG" ]; then
-            NEW_TAG="v1.0.0"
-          else
-            NEW_TAG=$(echo $TAG | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          fi
-          echo "::set-output name=new_tag::$NEW_TAG"
+        TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+        if [ -z "$TAG" ]; then
+          NEW_TAG="v1.0.0"
+        else
+          NEW_TAG=$(echo $TAG | awk -F. -v OFS=. '{$NF += 1 ; print}')
+        fi
+        echo "::set-output name=new_tag::$NEW_TAG"
 
     - name: Push new tag
       env:

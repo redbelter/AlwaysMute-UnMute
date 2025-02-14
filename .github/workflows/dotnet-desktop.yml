@@ -130,6 +130,26 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 
+  
+    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+    - name: Upload AlwaysMute build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: AlwaysMute-${{ matrix.configuration }}
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\${{ matrix.configuration }}\net8.0\
+    
+      # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+    - name: Upload AlwaysUnMute build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: AlwaysUnMute-${{ matrix.configuration }}
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\${{ matrix.configuration }}\net8.0\
+    
+    - name: Upload MuteAllOnce build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: MuteAllOnce-${{ matrix.configuration }}
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\
 
     - name: Upload Release Assets
       uses: actions/upload-release-asset@v1
@@ -137,13 +157,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\MuteAllOnce-${{ matrix.configuration }}.zip
-        asset_name: UnMuteAllOnce-Release.zip
+        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\MuteAllOnce-${{ matrix.configuration }}
+        asset_name: MuteAllOnce-Release.exe
         asset_content_type: application/octet-stream
-
-    - name: Upload UnMuteAllOnce build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: UnMuteAllOnce-${{ matrix.configuration }}
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\UnMuteAllOnce\bin\${{ matrix.configuration }}\net8.0\
     

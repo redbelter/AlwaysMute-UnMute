@@ -131,11 +131,6 @@ jobs:
         Compress-Archive -Path D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\* -DestinationPath D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\MuteAllOnce.zip
         Compress-Archive -Path D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\UnMuteAllOnce\bin\${{ matrix.configuration }}\net8.0\* -DestinationPath D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\UnMuteAllOnce.zip
 
-    - name: Upload zipped binaries
-      uses: actions/upload-artifact@v4
-      with:
-        name: Output-Zips
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\
 
     - name: Upload Release Assets
       uses: actions/upload-release-asset@v1
@@ -147,3 +142,34 @@ jobs:
         asset_name: AlwaysMute.zip
         asset_content_type: application/zip
     
+
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\AlwaysUnMute.zip
+        asset_name: AlwaysUnMute.zip
+        asset_content_type: application/zip
+
+
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\MuteAllOnce.zip
+        asset_name: MuteAllOnce.zip
+        asset_content_type: application/zip
+      
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\UnMuteAllOnce.zip
+        asset_name: UnMuteAllOnce.zip
+        asset_content_type: application/zip

@@ -123,25 +123,19 @@ jobs:
         Configuration: ${{ matrix.configuration }}
 
   
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload AlwaysMute build artifacts
+    - name: Zip output binaries
+      run: |
+        mkdir -p D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output
+        Compress-Archive -Path D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\${{ matrix.configuration }}\net8.0\* -DestinationPath D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\AlwaysMute.zip
+        Compress-Archive -Path D:\a\AlwaysMute-UnMute\AlwaysUnMute\bin\${{ matrix.configuration }}\net8.0\* -DestinationPath D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\AlwaysUnMute.zip
+        Compress-Archive -Path D:\a\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\* -DestinationPath D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\MuteAllOnce.zip
+        Compress-Archive -Path D:\a\AlwaysMute-UnMute\UnMuteAllOnce\bin\${{ matrix.configuration }}\net8.0\* -DestinationPath D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\UnMuteAllOnce.zip
+
+    - name: Upload zipped binaries
       uses: actions/upload-artifact@v4
       with:
-        name: AlwaysMute-${{ matrix.configuration }}
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\${{ matrix.configuration }}\net8.0\
-    
-      # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload AlwaysUnMute build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: AlwaysUnMute-${{ matrix.configuration }}
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysUnMute\bin\${{ matrix.configuration }}\net8.0\
-    
-    - name: Upload MuteAllOnce build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: MuteAllOnce-${{ matrix.configuration }}
-        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\
+        name: Output-Zips
+        path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\output\
 
     - name: Upload Release Assets
       uses: actions/upload-release-asset@v1

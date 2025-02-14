@@ -157,7 +157,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\AlwaysMute\bin\${{ matrix.configuration }}\net8.0\UnMuteAllOnce-Release.zip
+        asset_path: D:\a\AlwaysMute-UnMute\AlwaysMute-UnMute\MuteAllOnce\bin\${{ matrix.configuration }}\net8.0\MuteAllOnce-${{ matrix.configuration }}.zip
         asset_name: UnMuteAllOnce-Release.zip
         asset_content_type: application/octet-stream
 
